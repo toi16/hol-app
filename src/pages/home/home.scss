@@ -1,0 +1,33 @@
+page-home {
+
+}
+
+.grid-basic-page {
+
+  ion-col div {
+    background-color: #F9FAFB;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    text-align: center;
+  }
+
+}
+
+h1 {
+  text-align: center;
+}
+
+.grid-title ion-col div {
+  font-weight: bold;
+  background-color: #F9FAFA;
+
+}
+
+.summary ion-col div {
+  background-color: #EEFAFB;
+}
+
+.summary ion-col {
+  font-weight: bold;
+}

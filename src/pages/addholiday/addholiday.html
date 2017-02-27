@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Add Holiday</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="cards-bg">
+
+  <ion-card>
+
+    <ion-card-content>
+      <h2>Add a Holiday</h2>
+      <ion-list>
+
+        <ion-item>
+          <ion-label floating>Start Date</ion-label>
+          <ion-datetime displayFormat="DD MMM YYYY" pickerFormat="DD MMM YYYY" [(ngModel)]="startDate"></ion-datetime>
+        </ion-item>
+
+        <ion-item>
+          <ion-label floating>End Date</ion-label>
+          <ion-datetime displayFormat="DD MMM YYYY" pickerFormat="DD MM YYYY" [(ngModel)]="endDate"></ion-datetime>
+        </ion-item>
+
+        <ion-item>
+          <ion-label floating>Days Taken</ion-label>
+          <ion-input type="number" [(ngModel)]="daysTaken"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Holiday Approved</ion-label>
+            <ion-toggle color="secondary" [(ngModel)]="approved"></ion-toggle>
+        </ion-item>
+
+
+      </ion-list>
+
+      <div padding>
+        <button ion-button color="secondary">Add Holiday!</button>
+    </div>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

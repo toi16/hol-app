@@ -1,0 +1,76 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Settings</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="cards-bg">
+
+<ion-card>
+
+  <ion-card-content>
+    <h2>Holiday Year</h2>
+    <ion-list>
+    <ion-item>
+      <ion-label>Start Date</ion-label>
+      <ion-datetime displayFormat="DD MMM YYYY" [(ngModel)]="settingsService.startDate"></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>End Date</ion-label>
+      <ion-datetime displayFormat="DD MMM YYYY" [(ngModel)]="settingsService.endDate"></ion-datetime>
+    </ion-item>
+    </ion-list>
+  </ion-card-content>
+
+</ion-card>
+
+<ion-card>
+
+  <ion-card-content>
+    <h2>Holiday Entitlement</h2>
+    <ion-list>
+    <ion-item>
+      <ion-label>Days per year</ion-label>
+      <ion-input type="number" [(ngModel)]="settingsService.doc.daysPerYear"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Bank Holiday Days</ion-label>
+      <ion-input type="number" [(ngModel)]="settingsService.bankHolDays"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Bank Holidays part of Enitlement?</ion-label>
+      <ion-toggle color="secondary" [(ngModel)]="settingsService.bankHolInc"></ion-toggle>
+    </ion-item>
+    </ion-list>
+
+  </ion-card-content>
+
+</ion-card>
+
+<ion-card>
+
+  <ion-card-content>
+    <h2>Total Days Holiday</h2>
+    <ion-list>
+    <ion-item>
+      <ion-label>Holiday Entitlement</ion-label>
+      {{settingsService.bankHolDays}}
+    </ion-item>
+
+
+    </ion-list>
+  </ion-card-content>
+
+</ion-card>
+
+<ion-buttons end>
+      <button ion-button icon-only (click)="settingsService.updateSettings(doc)"><ion-icon name="cloud-upload"></ion-icon></button>
+    </ion-buttons>
+
+</ion-content>

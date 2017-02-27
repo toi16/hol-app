@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Remove Holiday</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content class="cards-bg">
+
+  <ion-card>
+    <ion-card-content>
+      <h2>Remove a Holiday</h2>
+      <ion-list>
+
+        <ion-item>
+          <ion-label floating>Choose Holiday to Remove</ion-label>
+          <ion-select [(ngModel)]="editHol">
+      <ion-option value="27-jan">27-jan</ion-option>
+      <ion-option value="n64">Nintendo64</ion-option>
+      <ion-option value="ps">PlayStation</ion-option>
+      <ion-option value="genesis">Sega Genesis</ion-option>
+      <ion-option value="saturn">Sega Saturn</ion-option>
+      <ion-option value="snes">SNES</ion-option>
+    </ion-select>
+        </ion-item>
+      </ion-list>
+      </ion-card-content>
+  </ion-card>
+
+
+
+</ion-content>
