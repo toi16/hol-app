@@ -3,12 +3,12 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Settings</ion-title>
+    <ion-title>{{ pageTitle}}</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content class="cards-bg">
-
+<form [formGroup]="form" (ngSubmit)="saveSettings()">
 <ion-card>
 
   <ion-card-content>
@@ -16,12 +16,12 @@
     <ion-list>
     <ion-item>
       <ion-label>Start Date</ion-label>
-      <ion-datetime displayFormat="DD MMM YYYY" [(ngModel)]="settingsService.startDate"></ion-datetime>
+      <ion-datetime displayFormat="DD MMM YYYY" formControlName="startdate" [(ngModel)]="setStartDate"></ion-datetime>
     </ion-item>
 
     <ion-item>
       <ion-label>End Date</ion-label>
-      <ion-datetime displayFormat="DD MMM YYYY" [(ngModel)]="settingsService.endDate"></ion-datetime>
+      <ion-datetime displayFormat="DD MMM YYYY" formControlName="enddate" [(ngModel)]="setEndDate"></ion-datetime>
     </ion-item>
     </ion-list>
   </ion-card-content>
@@ -35,17 +35,17 @@
     <ion-list>
     <ion-item>
       <ion-label>Days per year</ion-label>
-      <ion-input type="number" [(ngModel)]="settingsService.doc.daysPerYear"></ion-input>
+      <ion-input type="number" formControlName="holdays" [(ngModel)]="setHolDays"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label>Bank Holiday Days</ion-label>
-      <ion-input type="number" [(ngModel)]="settingsService.bankHolDays"></ion-input>
+      <ion-input type="number" formControlName="bankdays" [(ngModel)]="setBankDays"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label>Bank Holidays part of Enitlement?</ion-label>
-      <ion-toggle color="secondary" [(ngModel)]="settingsService.bankHolInc"></ion-toggle>
+      <ion-toggle color="secondary" formControlName="bankinc" [(ngModel)]="setBankInc"></ion-toggle>
     </ion-item>
     </ion-list>
 
@@ -60,7 +60,7 @@
     <ion-list>
     <ion-item>
       <ion-label>Holiday Entitlement</ion-label>
-      {{settingsService.bankHolDays}}
+      {{setBankHolDays}}
     </ion-item>
 
 
@@ -70,7 +70,7 @@
 </ion-card>
 
 <ion-buttons end>
-      <button ion-button icon-only (click)="settingsService.updateSettings(doc)"><ion-icon name="cloud-upload"></ion-icon></button>
+      <button ion-button icon-only [disabled]="!form.valid"><ion-icon name="cloud-upload"></ion-icon></button>
     </ion-buttons>
-
+</form>
 </ion-content>

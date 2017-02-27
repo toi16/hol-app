@@ -8,6 +8,7 @@ import { AddHolidayPage } from '../pages/addholiday/addholiday';
 import { EditHolidayPage } from '../pages/editholiday/editholiday';
 import { RemovePage } from '../pages/remove/remove';
 import { Settings } from '../providers/settings';
+import { Settingsdb } from '../providers/settingsdb';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,6 @@ import { Settings } from '../providers/settings';
     RemovePage,
     SettingsPage
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, Storage, Settings]
+  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, Storage, Settingsdb]
 })
 export class AppModule {}
