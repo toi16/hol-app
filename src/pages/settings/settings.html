@@ -8,11 +8,13 @@
 </ion-header>
 
 <ion-content class="cards-bg">
-<form [formGroup]="form" (ngSubmit)="saveSettings()">
+<form [formGroup]="form" (ngSubmit)="saveNewSettings()">
 <ion-card>
-
+  <ion-card-header>
+    Holiday Year
+  </ion-card-header>
   <ion-card-content>
-    <h2>Holiday Year</h2>
+
     <ion-list>
     <ion-item>
       <ion-label>Start Date</ion-label>
@@ -29,9 +31,11 @@
 </ion-card>
 
 <ion-card>
-
+<ion-card-header>
+  Holiday Entitlement
+</ion-card-header>
   <ion-card-content>
-    <h2>Holiday Entitlement</h2>
+
     <ion-list>
     <ion-item>
       <ion-label>Days per year</ion-label>
@@ -54,23 +58,27 @@
 </ion-card>
 
 <ion-card>
-
+<ion-card-header>
+  Total Days Holiday
+</ion-card-header>
   <ion-card-content>
-    <h2>Total Days Holiday</h2>
+
     <ion-list>
     <ion-item>
       <ion-label>Holiday Entitlement</ion-label>
-      {{setBankHolDays}}
-    </ion-item>
 
+    </ion-item>
+{{ entitlement }}
 
     </ion-list>
   </ion-card-content>
 
 </ion-card>
 
-<ion-buttons end>
-      <button ion-button icon-only [disabled]="!form.valid"><ion-icon name="cloud-upload"></ion-icon></button>
+<ion-buttons>
+      <button ion-button [disabled]="!form.valid">Save Settings<ion-icon name="save"></ion-icon></button>
     </ion-buttons>
 </form>
+
+
 </ion-content>

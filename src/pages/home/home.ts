@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { HolidayData } from '../../providers/holidayData';
 
 @Component({
   selector: 'page-home',
@@ -12,16 +13,18 @@ export class HomePage {
  private daysAvailable = this.totalDays - this.daysBooked;
  private daysTaken = 5;
 
-public items = [
-  {start: '01 Apr 2016', end: '08 Apr 2016', days: '7'},
-    {start: '10 Apr 2016', end: '20 Apr 2016', days: '10'}
-]
+public items: any;
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController, public holservice: HolidayData) {
 
   }
 
 
-
+  ionViewDidLoad(){
+      this.holservice.getAllHolidays().then((data) => {
+        this.items = data;
+        console.log(this.items);
+})
+}
 
 }
